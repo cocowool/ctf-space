@@ -7,11 +7,16 @@ highlight_file(__FILE__);
 $key1 = 0;
 $key2 = 0;
 
+//$a=1e9
 //$a = $_GET['a'];
+
+//$b=000000000004qGUX
 //$b = $_GET['b'];
 
-$a = 100;
+$a = "0e12346";
 $b = 200;
+
+//echo(intval($a));
 
 if(isset($a) && intval($a) > 6000000 && strlen($a) <= 3){
     if(isset($b) && '8b184b' === substr(md5($b),-6,6)){
