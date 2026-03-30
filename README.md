@@ -1,14 +1,13 @@
 # CTF Space
 
-CTF means catch the flag 是网络安全领域的一种比赛形式。
+这个仓库用来记录我学习并享受 CTF 的所有资料，不管会不会，永远要微笑面对下一道题。
 
-Catch the flag Scripts, some useful scripts and some quiz scripts
+CTF 是 Catch The Flag 的缩写，是网络安全领域的一种比赛形式，我从2019年开始接触这种形式的比赛，喜欢学习研究相关工具和题目。
 
-我在这个仓库记录一些 CTF 过程中用到的脚本和代码片段，也记录一些题目的解题用到的脚本，并不是 Writeup
+目前是 WEB、Misc 方面的菜鸡，是 PWN、Reverse、Cryph 等方面的门外汉。
 
-2025-08-20 最近发现有一些文章，达不到发布在博客上的标准，但是也需要记录下来，发现可以用这个 Repo，就是名字没办法修改了，暂且这样吧，全部放在 ctf-docs 目录下，md 格式，文章命名规范参考 YYYY-MM-DD-CTF-Category-Name
+我有一个公众号，感兴趣的可以关注。
 
-* ctf-quiz, some quiz i played
-* python_tools , some tools made by python
-* php, ctf php scripts
-* compile, compile scripts
+* ctf-wp 记录 CTF 题目的 Writeup
+* ctf-scripts 记录自己编写的相关脚本
+* ctf-quiz 记录一些收集到的题目
