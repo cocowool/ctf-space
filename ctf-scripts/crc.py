@@ -2,7 +2,9 @@ import os
 import binascii
 import struct
 
-# PNG CRC 
+# PNG CRC 校验不匹配情况下，计算文件中 crc 值对应的 宽、高
+# 计算后通过 010Editor 修改
+
 # png 文件路径
 png_file = "/Users/shiqiang/Downloads/ctf-2026/2.png"
 
