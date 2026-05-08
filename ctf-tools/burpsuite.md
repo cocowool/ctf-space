@@ -10,3 +10,5 @@
 * Decoder
 * Comparer
 
+## 技巧
+* 在 Repeater 中，选择URL部分，使用快捷键 Ctrl + U 可以快速进行URL编码

@@ -1,5 +1,23 @@
 # PHP 题目相关
 
+## PHP语言介绍
+
+
+## PHP RCE
+
+如果有执行 php 代码的入口，通常需要掌握哪些函数能够获取文件内容或更多内部信息，同时要掌握绕过 安全狗 / WAF 的技巧。
+
+常用的命令
+```php
+system('ls');
+//下面几个原生的php函数，用来绕过对cat、more等linux命令的过滤
+file_get_contents('filename');
+highlight_file('filename');
+readfile('filename');
+```
+
+
+
 ## PHP 弱类型比较
 
 * 弱类型比较 
