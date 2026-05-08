@@ -4,8 +4,23 @@ categories:
 tags:
 ---
 
-
 ## Python相关
+
+### python 常用命令
+
+如果服务端能执行 python 代码，常用的命令可以参考如下：
+```python
+# 打印信息
+print("hello")
+# 获取操作系统信息
+print(os.version)
+# 获取本地文件内容
+print(open('/etc/passwd').read())
+# 读取当前目录文件
+print(os.listdir('.'))
+# 获取全局命名空间变量信息
+print(globals().values())
+```
 
 ### Flash SSTI
 
