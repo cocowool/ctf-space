@@ -2,6 +2,7 @@
 
 ## PHP语言介绍
 
+PHP是世界上最好的语言，这是在2010年前适用的一句话。
 
 ## PHP RCE
 
@@ -42,3 +43,11 @@ s214587387a
 PHP中的文件包含，一般是通过 `include` 或者 `require` 函数触发。可以利用 `/etc/passwd` 和 `../../../etc/passwd` 等进行探测。
 
 文件包含检查的绕过。
+
+## 文件上传
+
+通过 zip 伪协议方式访问 zip 包中的代码
+
+```shell
+$ http://103.213.97.75:53587/?file=zip:///var/www/html/upload/a.jpg%23shell.php
+```
