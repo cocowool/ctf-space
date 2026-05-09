@@ -10,13 +10,20 @@ HTTP 的几种请求方式
 * PUT
 * DEL
 
-部分系统用这个属性判断请求客户端 IP，可通过修改来绕过。
+## 重要的Header
+
+`X-Forwarded-For` ，表示请求来自哪个IP。部分后台用这个属性判断请求客户端 IP，可通过修改来绕过。另外还有 `X-Real-IP` 和 `Client-IP` 可能被利用。
 
 ```
 X-Forwarded-For: 127.0.0.1 
 ```
 
+`Referer` ，表示请求来自哪个网站，部分后台对这个属性有校验和检查。典型场景用于防盗链、访问统计、基础来源校验、日志分析。
+```
+Referer: www.google.com
+```
 
+`Origin` ，表示请求的源。典型的场景用于 CORS预检、WebSocket、跨域安全校验。
 
 ## git 信息泄漏
 
