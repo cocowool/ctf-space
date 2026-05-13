@@ -61,6 +61,10 @@ readfile('filename');
 
 PHP中的文件包含，一般是通过 `include` 或者 `require` 函数触发。可以利用 `/etc/passwd` 和 `../../../etc/passwd` 等进行探测。
 
+* 最简单的就是直接包含文件，没做任何校验，直接 `/etc/passwd` 
+* 尝试 php 伪协议绕过，`?file=php://filter/convert.base64-encode/resource=/etc/passwd`
+* 路经过滤绕过，`?file=../../../../etc/passwd` 或者 `?file=....//etc/passwd`
+
 文件包含检查的绕过。
 
 ## 文件上传
