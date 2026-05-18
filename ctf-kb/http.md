@@ -25,8 +25,6 @@ Referer: www.google.com
 
 `Origin` ，表示请求的源。典型的场景用于 CORS预检、WebSocket、跨域安全校验。
 
-
-
 ```
 GET /resusl.php?x=admin  HTTP/1.1
 Host: 103.236.73.121:16645
@@ -42,6 +40,24 @@ X-Forwarded-For: 127.0.0.1
 Client-IP: 127.0.0.1
 X-Real-IP: 127.0.0.1
 
+```
+
+## HTTP认证
+
+几种类型
+* HTTP基本认证
+* Digest 认证
+* Token/JWT 认证
+
+### 基本认证
+
+```python3
+# 服务器返回 401 状态码，在响应头中包含
+WWW-Authenticate: Basic realm="xxx"
+```
+这时浏览器访问会弹出登陆框，输入用户名、密码后，浏览器把 `用户名:密码` 进行 base64 编码后放入请求头
+```python
+Authorization: Basic XXXXXXX
 ```
 
 ## 信息收集
